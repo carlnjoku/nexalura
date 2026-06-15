@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nexalura/static/css/main.74aaefba.css",
+    "main.js": "/nexalura/static/js/main.410f30c5.js",
+    "index.html": "/nexalura/index.html",
+    "main.74aaefba.css.map": "/nexalura/static/css/main.74aaefba.css.map",
+    "main.410f30c5.js.map": "/nexalura/static/js/main.410f30c5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.74aaefba.css",
+    "static/js/main.410f30c5.js"
+  ]
+}
