@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {Suspense, useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -33,6 +33,7 @@ import StartupMVP from './pages/StartupMVP';
 import MaintenanceSupport from './pages/MaintenanceSupport';
 import AppStorePublishing from './pages/AppStorePublishing';
 import WebsiteRescue from './pages/WebsiteRescue';
+import LoadingSpinner from './components/LoadingSpinner';
 // import { useLocation } from 'react-router-dom';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
       <CssBaseline />
       <Router>
         <Layout>
+        <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -82,6 +84,7 @@ function App() {
             <Route path="/app-store-publishing" element={<AppStorePublishing />} />
             <Route path="/website-rescue" element={<WebsiteRescue />} />
           </Routes>
+          </Suspense>
         </Layout>
       </Router>
     </ThemeProvider>

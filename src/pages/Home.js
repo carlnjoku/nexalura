@@ -18,6 +18,7 @@ import PaletteIcon from '@mui/icons-material/Palette';
 import AndroidIcon from '@mui/icons-material/Android';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import { images } from '../config/images';
 
 // Soft shadow definition (reusable)
 const softShadow = '0 8px 20px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.02)';
@@ -258,7 +259,7 @@ const Home = () => {
             <Grid item xs={12} md={5} sx={{ display: { xs: 'none', md: 'block' } }}>
               <Box
                 component="img"
-                src="https://placehold.co/600x500/2563eb/white?text=Hero+Illustration"
+                src={images.home}
                 alt="Hero illustration"
                 sx={{
                   width: '100%',

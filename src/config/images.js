@@ -1,0 +1,20 @@
+export const images = {
+    home: '/images/home.jpg',
+    mobileHero: '/images/mobile-app.jpg',
+    uiuxHero: '/images/ui-ux.jpg',
+    aiHero: '/images/ai-brain.jpg',
+    bliss_1: '/images/bliss_1.png',
+    bliss_2: '/images/bliss_2.png',
+    bliss_3: '/images/bliss_3.png',
+    bliss_3: '/images/bliss_3.png',
+    cc: '/images/cc.png',
+    cc1: '/images/cc1.png',
+    cc2: '/images/cc2.png',
+    cc3: '/images/cc3.png',
+    cc4: '/images/cc4.png',
+    cc5: '/images/cc5.png',
+    fresh1: '/images/fresh1.png',
+    fresh2: '/images/fresh2.png',
+    fresh3: '/images/fresh3.png',
+  };
+   

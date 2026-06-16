@@ -26,7 +26,6 @@ const Footer = () => {
     { name: 'Partners', path: '/partners' },
   ];
   const resourceLinks = [
-    { name: 'Blog', path: '/blog' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Pricing', path: '/pricing' },
     { name: 'Startup MVP', path: '/startup-mvp' },
