@@ -333,10 +333,10 @@ const CloudDevOps = () => {
       {/* CI/CD Pipeline Visual (unchanged) */}
       <Box sx={{ bgcolor: alpha(theme.palette.primary.light, 0.05), py: 8 }}>
         <Container maxWidth="lg" textAlign="center">
-          <Typography variant="h3" gutterBottom sx={{ fontWeight: 700 }}>
+          <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
             Automated CI/CD Pipeline
           </Typography>
-          <Typography variant="h6" color="text.secondary" sx={{ mb: 6 }}>
+          <Typography variant="h6" align="center" color="text.secondary" sx={{ mb: 6 }}>
             From commit to production – fully automated
           </Typography>
           <Box
