@@ -37,7 +37,7 @@ const Testimonials = () => {
         </Grid>
       </Container>
       <Box sx={{ bgcolor: 'secondary.main', color: 'white', py: 6, textAlign: 'center' }}>
-        <Container><Typography variant="h5">Join our happy clients</Typography><Button component={Link} to="/contact" variant="contained" sx={{ mt: 2, bgcolor: 'white', color: 'secondary.main' }}>Start Your Project</Button></Container>
+        <Container><Typography variant="h5">Join our happy clients</Typography><Button onClick={() => (window.location.href = '/request-quote')}  variant="contained" sx={{ mt: 2, bgcolor: 'white', color: 'secondary.main' }}>Start Your Project</Button></Container>
       </Box>
     </Box>
   );

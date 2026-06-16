@@ -231,7 +231,7 @@ const Header = () => {
 
   return (
     <>
-      <AppBar position="sticky" color="default" elevation={1}>
+      <AppBar position="sticky" color="default" elevation={0}>
         <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
             {/* Logo - left */}

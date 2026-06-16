@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import {
   Box,
   Container,
@@ -40,6 +40,18 @@ const softShadowHover = '0 12px 28px rgba(0,0,0,0.06), 0 4px 8px rgba(0,0,0,0.02
 
 const AppStorePublishing = () => {
   const theme = useTheme();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#process') {
+      const element = document.getElementById('process');
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   const services = [
     {
@@ -98,7 +110,7 @@ const AppStorePublishing = () => {
 
   return (
     <Box>
-      {/* Hero Section */}
+      {/* Hero Section – Circular Image */}
       <Box
         sx={{
           bgcolor: 'primary.main',
@@ -153,17 +165,17 @@ const AppStorePublishing = () => {
                 </Button>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
+
+            {/* Right side – circular image */}
+            <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
               <Box
-                component="img"
-                src="https://placehold.co/600x500/4F46E5/white?text=App+Store+Publishing"
-                alt="App store publishing illustration"
                 sx={{
                   width: '100%',
-                  maxWidth: 500,
-                  mx: 'auto',
-                  display: 'block',
-                  borderRadius: 4,
+                  maxWidth: 450,
+                  aspectRatio: '1/1',
+                  margin: 'auto',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
                   boxShadow: '0 20px 35px -10px rgba(0,0,0,0.3)',
                   animation: 'float 6s ease-in-out infinite',
                   '@keyframes float': {
@@ -172,7 +184,18 @@ const AppStorePublishing = () => {
                     '100%': { transform: 'translateY(0px)' },
                   },
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src="https://placehold.co/600x500/4F46E5/white?text=App+Store+Publishing"
+                  alt="App store publishing illustration"
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
             </Grid>
           </Grid>
         </Container>

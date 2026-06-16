@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {
   Box,
@@ -29,6 +29,7 @@ import {
   Backup,
   GitHub,
 } from '@mui/icons-material';
+import { useLocation } from 'react-router-dom';
 
 const softShadow = '0 8px 24px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.02)';
 const softShadowHover = '0 12px 28px rgba(0,0,0,0.06), 0 4px 8px rgba(0,0,0,0.02)';
@@ -86,9 +87,22 @@ const CloudDevOps = () => {
     'Security hardening & vulnerability scanning',
   ];
 
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#tech') {
+      const element = document.getElementById('tech');
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <Box>
-      {/* Hero Section */}
+      {/* Hero Section – now with circular image */}
       <Box
         sx={{
           bgcolor: 'primary.main',
@@ -144,17 +158,17 @@ const CloudDevOps = () => {
                 </Button>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
+
+            {/* Right side – circular image */}
+            <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
               <Box
-                component="img"
-                src="https://placehold.co/600x500/4F46E5/white?text=Cloud+%26+DevOps"
-                alt="Cloud DevOps illustration"
                 sx={{
                   width: '100%',
-                  maxWidth: 500,
-                  mx: 'auto',
-                  display: 'block',
-                  borderRadius: 4,
+                  maxWidth: 450,
+                  aspectRatio: '1/1',
+                  margin: 'auto',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
                   boxShadow: '0 20px 35px -10px rgba(0,0,0,0.3)',
                   animation: 'float 6s ease-in-out infinite',
                   '@keyframes float': {
@@ -163,13 +177,24 @@ const CloudDevOps = () => {
                     '100%': { transform: 'translateY(0px)' },
                   },
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src="https://placehold.co/600x500/4F46E5/white?text=Cloud+%26+DevOps"
+                  alt="Cloud DevOps illustration"
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
             </Grid>
           </Grid>
         </Container>
       </Box>
 
-      {/* Services */}
+      {/* Services (unchanged) */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
         <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
           What We Deliver
@@ -210,7 +235,7 @@ const CloudDevOps = () => {
         </Grid>
       </Container>
 
-      {/* Technologies */}
+      {/* Technologies (unchanged) */}
       <Box sx={{ bgcolor: alpha(theme.palette.primary.light, 0.05), py: 8 }} id="tech">
         <Container maxWidth="lg">
           <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
@@ -259,7 +284,7 @@ const CloudDevOps = () => {
         </Container>
       </Box>
 
-      {/* Benefits & Why Choose */}
+      {/* Benefits & Why Choose (unchanged) */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
         <Grid container spacing={6}>
           <Grid item xs={12} md={6}>
@@ -305,7 +330,7 @@ const CloudDevOps = () => {
         </Grid>
       </Container>
 
-      {/* CI/CD Pipeline Visual */}
+      {/* CI/CD Pipeline Visual (unchanged) */}
       <Box sx={{ bgcolor: alpha(theme.palette.primary.light, 0.05), py: 8 }}>
         <Container maxWidth="lg" textAlign="center">
           <Typography variant="h3" gutterBottom sx={{ fontWeight: 700 }}>
@@ -343,7 +368,7 @@ const CloudDevOps = () => {
         </Container>
       </Box>
 
-      {/* Call to Action */}
+      {/* Call to Action (unchanged) */}
       <Box
         sx={{
           bgcolor: 'secondary.main',

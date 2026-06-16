@@ -133,7 +133,7 @@ const StartupMVP = () => {
 
   return (
     <Box>
-      {/* Hero Section */}
+      {/* Hero Section – now with circular image */}
       <Box
         sx={{
           bgcolor: 'primary.main',
@@ -189,17 +189,17 @@ const StartupMVP = () => {
                 </Button>
               </Box>
             </Grid>
+
+            {/* Right side – circular image */}
             <Grid item xs={12} md={5} sx={{ display: { xs: 'none', md: 'block' } }}>
               <Box
-                component="img"
-                src="https://placehold.co/500x400/4F46E5/white?text=Startup+MVP"
-                alt="MVP illustration"
                 sx={{
                   width: '100%',
                   maxWidth: 450,
-                  mx: 'auto',
-                  display: 'block',
-                  borderRadius: 4,
+                  aspectRatio: '1/1',
+                  margin: 'auto',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
                   boxShadow: '0 20px 35px -10px rgba(0,0,0,0.3)',
                   animation: 'float 6s ease-in-out infinite',
                   '@keyframes float': {
@@ -208,13 +208,24 @@ const StartupMVP = () => {
                     '100%': { transform: 'translateY(0px)' },
                   },
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src="https://placehold.co/500x400/4F46E5/white?text=Startup+MVP"
+                  alt="MVP illustration"
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
             </Grid>
           </Grid>
         </Container>
       </Box>
 
-      {/* Why MVP */}
+      {/* Why MVP (unchanged) */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
         <Typography
           variant="h3"
@@ -268,7 +279,7 @@ const StartupMVP = () => {
         </Grid>
       </Container>
 
-      {/* Our MVP Process */}
+      {/* Our MVP Process (unchanged) */}
       <Box sx={{ bgcolor: alpha(theme.palette.primary.light, 0.05), py: 8 }}>
         <Container maxWidth="lg">
           <Typography
@@ -308,7 +319,7 @@ const StartupMVP = () => {
         </Container>
       </Box>
 
-      {/* Pricing Plans */}
+      {/* Pricing Plans (unchanged) */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
         <Typography
           variant="h3"
@@ -389,7 +400,7 @@ const StartupMVP = () => {
         </Grid>
       </Container>
 
-      {/* FAQ for Startups */}
+      {/* FAQ for Startups (unchanged) */}
       <Box sx={{ bgcolor: alpha(theme.palette.primary.light, 0.05), py: 8 }}>
         <Container maxWidth="md">
           <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
@@ -430,7 +441,7 @@ const StartupMVP = () => {
         </Container>
       </Box>
 
-      {/* Final CTA */}
+      {/* Final CTA (unchanged) */}
       <Box
         sx={{
           bgcolor: 'secondary.main',

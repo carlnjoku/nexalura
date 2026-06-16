@@ -88,7 +88,7 @@ const AiAutomation = () => {
 
   return (
     <Box>
-      {/* Hero Section */}
+      {/* Hero Section – now with circular image */}
       <Box
         sx={{
           bgcolor: 'primary.main',
@@ -143,17 +143,17 @@ const AiAutomation = () => {
                 </Button>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
+
+            {/* Right side – circular image */}
+            <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
               <Box
-                component="img"
-                src="https://placehold.co/600x500/4F46E5/white?text=AI+Automation"
-                alt="AI illustration"
                 sx={{
                   width: '100%',
-                  maxWidth: 500,
-                  mx: 'auto',
-                  display: 'block',
-                  borderRadius: 4,
+                  maxWidth: 450,
+                  aspectRatio: '1/1',
+                  margin: 'auto',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
                   boxShadow: '0 20px 35px -10px rgba(0,0,0,0.3)',
                   animation: 'float 6s ease-in-out infinite',
                   '@keyframes float': {
@@ -162,13 +162,24 @@ const AiAutomation = () => {
                     '100%': { transform: 'translateY(0px)' },
                   },
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src="https://placehold.co/600x500/4F46E5/white?text=AI+Automation"
+                  alt="AI illustration"
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
             </Grid>
           </Grid>
         </Container>
       </Box>
 
-      {/* Services */}
+      {/* Services (unchanged) */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
         <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
           What We Build
@@ -209,7 +220,7 @@ const AiAutomation = () => {
         </Grid>
       </Container>
 
-      {/* Benefits */}
+      {/* Benefits (unchanged) */}
       <Box sx={{ bgcolor: alpha(theme.palette.primary.light, 0.05), py: 8 }}>
         <Container maxWidth="lg">
           <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
@@ -233,7 +244,7 @@ const AiAutomation = () => {
         </Container>
       </Box>
 
-      {/* Technologies */}
+      {/* Technologies (unchanged) */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
         <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
           Our AI Technology Stack
@@ -280,7 +291,7 @@ const AiAutomation = () => {
         </Box>
       </Container>
 
-      {/* Use Cases */}
+      {/* Use Cases (unchanged) */}
       <Box sx={{ bgcolor: alpha(theme.palette.primary.light, 0.05), py: 8 }}>
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
@@ -327,7 +338,7 @@ const AiAutomation = () => {
         </Container>
       </Box>
 
-      {/* Call to Action */}
+      {/* Call to Action (unchanged) */}
       <Box
         sx={{
           bgcolor: 'secondary.main',

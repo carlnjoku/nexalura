@@ -81,7 +81,7 @@ const MobileDevelopment = () => {
 
   return (
     <Box>
-      {/* Hero Section with Photo */}
+      {/* Hero Section with Circular Image */}
       <Box
         sx={{
           bgcolor: 'primary.main',
@@ -139,18 +139,16 @@ const MobileDevelopment = () => {
               </Box>
             </Grid>
 
-            {/* Right side - photo */}
-            <Grid item xs={12} md={6}>
+            {/* Right side - circular hero image */}
+            <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
               <Box
-                component="img"
-                src="https://placehold.co/600x500/4F46E5/white?text=Mobile+App+Development"
-                alt="Mobile development illustration"
                 sx={{
                   width: '100%',
-                  maxWidth: 500,
-                  mx: 'auto',
-                  display: 'block',
-                  borderRadius: 4,
+                  maxWidth: 450,
+                  aspectRatio: '1/1',
+                  margin: 'auto',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
                   boxShadow: '0 20px 35px -10px rgba(0,0,0,0.3)',
                   animation: 'float 6s ease-in-out infinite',
                   '@keyframes float': {
@@ -159,13 +157,24 @@ const MobileDevelopment = () => {
                     '100%': { transform: 'translateY(0px)' },
                   },
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src="https://placehold.co/600x500/4F46E5/white?text=Mobile+App+Development"
+                  alt="Mobile development illustration"
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
             </Grid>
           </Grid>
         </Container>
       </Box>
 
-      {/* What We Build */}
+      {/* What We Build (unchanged) */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
         <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
           What We Build
@@ -208,7 +217,7 @@ const MobileDevelopment = () => {
         </Grid>
       </Container>
 
-      {/* Technologies */}
+      {/* Technologies (unchanged) */}
       <Box sx={{ bgcolor: alpha(theme.palette.primary.light, 0.05), py: 8 }}>
         <Container maxWidth="lg">
           <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
@@ -257,7 +266,7 @@ const MobileDevelopment = () => {
         </Container>
       </Box>
 
-      {/* Key Features */}
+      {/* Key Features (unchanged) */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
         <Grid container spacing={6} alignItems="center">
           <Grid item xs={12} md={6}>
@@ -302,7 +311,7 @@ const MobileDevelopment = () => {
         </Grid>
       </Container>
 
-      {/* Call to Action */}
+      {/* Call to Action (unchanged) */}
       <Box
         sx={{
           bgcolor: 'secondary.main',

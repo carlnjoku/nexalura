@@ -97,7 +97,7 @@ const UiUxDesign = () => {
 
   return (
     <Box>
-      {/* Hero Section with Photo */}
+      {/* Hero Section – now with circular image */}
       <Box
         sx={{
           bgcolor: 'primary.main',
@@ -109,7 +109,7 @@ const UiUxDesign = () => {
       >
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center">
-            {/* Left text */}
+            {/* Left text – unchanged */}
             <Grid item xs={12} md={6}>
               <Chip
                 label="UI/UX Design"
@@ -155,18 +155,16 @@ const UiUxDesign = () => {
               </Box>
             </Grid>
 
-            {/* Right photo */}
-            <Grid item xs={12} md={6}>
+            {/* Right side – circular image */}
+            <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
               <Box
-                component="img"
-                src="https://placehold.co/600x500/4F46E5/white?text=UI%2FUX+Design"
-                alt="UI/UX design illustration"
                 sx={{
                   width: '100%',
-                  maxWidth: 500,
-                  mx: 'auto',
-                  display: 'block',
-                  borderRadius: 4,
+                  maxWidth: 450,
+                  aspectRatio: '1/1',
+                  margin: 'auto',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
                   boxShadow: '0 20px 35px -10px rgba(0,0,0,0.3)',
                   animation: 'float 6s ease-in-out infinite',
                   '@keyframes float': {
@@ -175,13 +173,24 @@ const UiUxDesign = () => {
                     '100%': { transform: 'translateY(0px)' },
                   },
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src="https://placehold.co/600x500/4F46E5/white?text=UI%2FUX+Design"
+                  alt="UI/UX design illustration"
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
             </Grid>
           </Grid>
         </Container>
       </Box>
 
-      {/* Services */}
+      {/* Services (unchanged) */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
         <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
           What We Deliver
@@ -224,7 +233,7 @@ const UiUxDesign = () => {
         </Grid>
       </Container>
 
-      {/* Process */}
+      {/* Process (unchanged) */}
       <Box sx={{ bgcolor: alpha(theme.palette.primary.light, 0.05), py: 8 }}>
         <Container maxWidth="lg">
           <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
@@ -254,7 +263,7 @@ const UiUxDesign = () => {
         </Container>
       </Box>
 
-      {/* Tools & Technologies */}
+      {/* Tools & Technologies (unchanged) */}
       <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
         <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
           Tools We Love
@@ -282,7 +291,7 @@ const UiUxDesign = () => {
         </Box>
       </Container>
 
-      {/* Recent Work / Portfolio */}
+      {/* Recent Work / Portfolio (unchanged) */}
       <Box sx={{ bgcolor: alpha(theme.palette.primary.light, 0.05), py: 8 }}>
         <Container maxWidth="lg">
           <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 700 }}>
@@ -325,7 +334,7 @@ const UiUxDesign = () => {
         </Container>
       </Box>
 
-      {/* Call to Action */}
+      {/* Call to Action (unchanged) */}
       <Box
         sx={{
           bgcolor: 'secondary.main',
