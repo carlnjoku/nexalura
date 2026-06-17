@@ -91,7 +91,7 @@ const Footer = () => {
           </Grid>
         </Grid>
         <Divider sx={{ my: 4, bgcolor: 'grey.800' }} />
-        <Typography variant="body2" align="center" sx={{ color: 'grey.500' }}>&copy; 2024 Nexalura. All rights reserved.</Typography>
+        <Typography variant="body2" align="center" sx={{ color: 'grey.500' }}>&copy; 2024 Nexalura a company of Endevours and Results. All rights reserved.</Typography>
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mt: 1 }}>
           {legalLinks.map((link) => (
             <MuiLink key={link.path} component={Link} to={link.path} color="inherit" underline="hover" variant="body2">{link.name}</MuiLink>
